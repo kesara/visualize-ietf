@@ -99,7 +99,6 @@ def main():
                     file=id_file,
                     colour=id_colour))
         except Exception as e:
-            print(e)
             pass
     exit(0)
 
