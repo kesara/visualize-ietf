@@ -8,6 +8,8 @@ from urllib.parse import urlparse
 
 from lxml import etree
 
+from colours import WG_COLOURS
+
 
 BIBXML_PATH = fspath('bibxml3')
 
@@ -17,8 +19,8 @@ def get_date(date_tag):
                 year=date_tag.get('year'),
                 month=date_tag.get('month', 'January'),
                 day=date_tag.get('day', 1),
-                hour=randrange(0, 25),
-                min=randrange(0, 61))
+                hour=randrange(0, 24),
+                min=randrange(0, 60))
     return int(mktime(strptime(date, '%Y %B %d %H:%M:%S')))
 
 
@@ -56,11 +58,13 @@ def get_id_file(id_dict):
 
 
 def get_colour(id_dict):
-    if id_dict['org'] == 'ietf':
+    if 'wg' in id_dict.keys() and id_dict['wg'] in WG_COLOURS.keys():
+        return WG_COLOURS[id_dict['wg']]
+    elif id_dict['org'] == 'ietf':
         return '2574a9'
-    if id_dict['org'] == 'irtf':
+    elif id_dict['org'] == 'irtf':
         return 'b659ac'
-    if id_dict['org'] == 'iab':
+    elif id_dict['org'] == 'iab':
         return '708090'
     else:
         return 'd47500'
