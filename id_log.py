@@ -1,6 +1,7 @@
 # id_log: Create custom log of IETF Internet Drafts
 
 from os import fspath, scandir
+from random import randrange
 from sys import exit
 from time import mktime, strptime
 from urllib.parse import urlparse
@@ -12,10 +13,12 @@ BIBXML_PATH = fspath('bibxml3')
 
 
 def get_date(date_tag):
-    date = '{yyyy} {month} {day} 00:00:00'.format(
-                yyyy=date_tag.get('year'),
+    date = '{year} {month} {day} {hour:02}:{min:02}:00'.format(
+                year=date_tag.get('year'),
                 month=date_tag.get('month', 'January'),
-                day=date_tag.get('day', 1))
+                day=date_tag.get('day', 1),
+                hour=randrange(0, 25),
+                min=randrange(0, 61))
     return int(mktime(strptime(date, '%Y %B %d %H:%M:%S')))
 
 
