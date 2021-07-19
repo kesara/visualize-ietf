@@ -19,15 +19,13 @@ python -m venv venv
 . venv/bin/activate
 ```
 
-* Install required dependencies
-
-To install Python dependencies:
+* Install Python dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-Install [gource](https://gource.io/).
+* Install [gource](https://gource.io/).
 
 * Get Bibxml3 references.
 
