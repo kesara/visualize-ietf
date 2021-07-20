@@ -44,5 +44,8 @@ python id_log.py > id.log && sort -n id.log > id.log.sorted
 * Create the visualization
 
 ```
-gource --log-format custom id.log.sorted --date-format '%Y-%m-%d' -a 0.5 --hide filenames
+gource --log-format custom --date-format '%Y-%m-%d' -a 0.5 --hide filenames,root -s 3 --bloom-intensity 0.01 --dir-name-depth 2 id.log.sorted
 ```
+
+## Legend
+![legend](colour_codes.png "Legend")
