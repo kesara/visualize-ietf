@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 
 from lxml import etree
 
-from colours import WG_COLOURS
+from colours import IETF_COLOUR, IRTF_COLOUR, OTHER_COLOUR, WG_COLOURS
 
 
 BIBXML_PATH = fspath('bibxml3')
@@ -61,13 +61,11 @@ def get_colour(id_dict):
     if 'wg' in id_dict.keys() and id_dict['wg'] in WG_COLOURS.keys():
         return WG_COLOURS[id_dict['wg']]
     elif id_dict['org'] == 'ietf':
-        return '2574a9'
+        return IETF_COLOUR
     elif id_dict['org'] == 'irtf':
-        return 'b659ac'
-    elif id_dict['org'] == 'iab':
-        return '708090'
+        return IRTF_COLOUR
     else:
-        return 'd47500'
+        return OTHER_COLOUR
 
 
 def main():
