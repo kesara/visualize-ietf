@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 
 from lxml import etree
 
+from areas import AREAS
 from colours import IETF_COLOUR, IRTF_COLOUR, OTHER_COLOUR, WG_COLOURS
 
 
@@ -24,6 +25,10 @@ def get_date(date_tag):
     return int(mktime(strptime(date, '%Y %B %d %H:%M:%S')))
 
 
+def get_area(wg):
+    return next((k for k, v in AREAS.items() if wg in v), None)
+
+
 def get_id_dict(filename):
     name_parts = filename[:-4].split('-')
     id_dict = {}
@@ -31,6 +36,7 @@ def get_id_dict(filename):
     if name_parts[1] == 'ietf':
         id_dict = {
                 'org': name_parts[1],
+                'area': get_area(name_parts[2]),
                 'wg': name_parts[2],
                 'name': '-'.join(name_parts[3:-1]),
                 'file_name': '-'.join(name_parts)}
