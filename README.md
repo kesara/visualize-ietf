@@ -1,7 +1,7 @@
 # visualize-ietf
 Visualization of IETF (Internet Engineering Task Force) IDs (Internet Draft) and RFC (Request for Comments)
 
-[![IETF Internet Draft (ID) Authoring Visualization - January 2021- July 2021 on Youtube](screenshot.png)](https://www.youtube.com/watch?v=55KZ-cNHOoo)
+[![IETF Internet Draft (ID) Authoring Visualization - January 2021- July 2021 on Youtube](screenshot.png)](https://www.youtube.com/watch?v=3pmf486WPaQ)
 
 ## Installation
 
@@ -44,7 +44,7 @@ python id_log.py > id.log && sort -n id.log > id.log.sorted
 * Create the visualization
 
 ```
-gource --log-format custom --date-format '%Y-%m-%d' -a 0.5 --hide filenames,root -s 3 --bloom-intensity 0.01 --dir-name-depth 2 id.log.sorted
+gource --log-format custom --date-format '%Y-%m-%d' -a 0.5 --hide filenames -s 3 --bloom-intensity 0.01 --dir-name-depth 3 id.log.sorted
 ```
 
 ## Legend
