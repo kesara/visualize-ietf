@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 from lxml import etree
 
 from areas import AREAS
-from colours import IETF_COLOUR, IRTF_COLOUR, OTHER_COLOUR, WG_COLOURS
+from colours import AREA_COLOURS, IETF_COLOUR, IRTF_COLOUR, OTHER_COLOUR
 
 
 BIBXML_PATH = fspath('bibxml3')
@@ -64,8 +64,8 @@ def get_id_file(id_dict):
 
 
 def get_colour(id_dict):
-    if 'wg' in id_dict.keys() and id_dict['wg'] in WG_COLOURS.keys():
-        return WG_COLOURS[id_dict['wg']]
+    if 'area' in id_dict.keys():
+        return AREA_COLOURS[id_dict['area']]
     elif id_dict['org'] == 'ietf':
         return IETF_COLOUR
     elif id_dict['org'] == 'irtf':
