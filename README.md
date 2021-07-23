@@ -1,9 +1,20 @@
 # visualize-ietf
 Visualization of IETF (Internet Engineering Task Force) IDs (Internet Draft) and RFC (Request for Comments)
 
-[![IETF Internet Draft (ID) Authoring Visualization - January 2021- July 2021 on Youtube](screenshot.png)](https://www.youtube.com/watch?v=3pmf486WPaQ)
+[![Visualizations Playlist on Youtube](screenshot.png)](https://www.youtube.com/playlist?list=PLuakzjxkt1oAjiOhkq66IWgspqnp_ZdfN)
 
-## Installation
+## Visualizations
+
+* [ID Authoring for 2021 (From January 2021 to July 2021)](https://www.youtube.com/watch?v=3pmf486WPaQ)
+* [GEN (General Area) Working Groups](https://www.youtube.com/watch?v=a9PpqZamkck)
+* [RTG (Routing Area) Working Groups](https://www.youtube.com/watch?v=KdR-yusyPw8)
+* [ART (Applications and Real-Time Area) Working Groups](https://www.youtube.com/watch?v=45PexHj_VjM)
+* [TSV (Transport Area) Working Groups](https://www.youtube.com/watch?v=U0qOyCP7WTc)
+* [OPS (Operations and Management Area)](https://www.youtube.com/watch?v=MKXWCtxr49A)
+* [INT (Internet Area) Working Groups](https://www.youtube.com/watch?v=ieJGnrSpF8E)
+* [SEC (Security Area) Working Groups](https://www.youtube.com/watch?v=SaUIjPF1oRA)
+
+## Setup
 
 * Clone project
 
@@ -33,7 +44,7 @@ pip install -r requirements.txt
 rsync -avz rsync.ietf.org::xml2rfc.bibxml/bibxml3/*.xml bibxml3
 ```
 
-## Usage
+## Generating visualizations
 
 * Created a sorted ID log
 
