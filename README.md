@@ -41,7 +41,7 @@ pip install -r requirements.txt
 * Get Bibxml3 references.
 
 ```
-rsync -avz rsync.ietf.org::xml2rfc.bibxml/bibxml3/*.xml bibxml3
+rsync -avz rsync.ietf.org::bibxml-ids bibxml3
 ```
 
 ## Generating visualizations
